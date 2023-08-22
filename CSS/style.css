@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+}
+h3{
+    font-size: 30px;
+    color: white;
+}
+
+#s-cont{
+    padding: 20px 25px;
+    width: 12vw ;
+    height: 9vh;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.li-cont{
+    padding: 7px 0px;
+    width: 15vw;
+    /* background-color: aqua; */
+    height: 7vh;
+    display: flex;
+    align-items: center;
+}
+#s-logo{
+    width: 45px;
+}
+nav{
+    font-family: 'Ubuntu', sans-serif;
+    height: 100vh;
+    width: 20vw;
+    background-color:black;
+    position: fixed;
+    top: 0px;
+}
+#main-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0px 30px;
+    list-style: none;
+}
+.s-li{
+    letter-spacing: 1px;
+    color: white;
+    font-weight: bolder;
+    font-size: 0.8rem;
+    padding: 15px;
+    cursor: pointer;
+}
+#liked-logo{
+    border-radius: 10px;
+}
+.logos{
+    cursor: pointer;
+    width: 30px;  
+}
+.b-img{
+    width: 30px;
+    position: relative;
+    bottom: 350px;
+    left: 200px;
+
+}
+.b-buttons{
+    width: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+#songs-cont{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 75vw;
+    height: 73vh;
+    border-radius: 10px;
+    background-image: linear-gradient(rgb(67, 5, 5),black);
+    display: none;
+
+}
+#play-cont{
+    position:absolute;
+    bottom: 0px;
+    right: 20px;
+    width: 100vw;
+    height: 20vh;
+    /* border-radius: 10px; */
+    /* background-image: linear-gradient(rgb(1, 63, 66),rgb(14, 14, 14)); */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: black;
+    border-top: solid 0.5px rgba(255, 255, 255, 0.208);
+    z-index: 1;
+    /* display: none; */
+}
+#play-cont-dup{
+    position:absolute;
+    bottom: 10px;
+    right: 20px;
+    width: 80vw;
+    height: 20vh;
+    /* background-color: aqua; */
+    display: none;
+}
+#kb-pic{
+    position: absolute;
+    right: 50px;
+    top: 40px;
+    width: 255px;
+    border-radius: 10px;
+}
+#song{
+    width: 45vw;
+    height: 10vh;
+    background-color: rgba(249, 249, 249, 0.08);
+    border-radius: 10px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+#kbsongs-cont{
+    font-family: 'Ubuntu', sans-serif;
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    width: 50vw;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    letter-spacing: 0.5px;
+    color: white;
+    font-weight: lighter;
+    /* background-color: burlywood; */
+}
+#song:hover{
+    background-color: rgba(222, 206, 185, 0.199);
+}
+span:hover{
+    cursor: context-menu;
+}
+
+input{
+    width: 60vw;
+}
+.paly-logos{
+    width: 35px;
+    opacity: 70%;
+    cursor: pointer;
+   
+}
+.paly-logos:hover{
+    opacity: 100%;
+    transform: scale(1.1);
+}
+#p2{
+    width: 70px;
+}
+.plg{
+    width: 15vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* background-color: aquamarine; */
+}
+#buttonVal,button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+#box{
+    width: 60%;
+    height: 4px;
+    background-color: gray;
+    border-radius: 10px;
+}
+#timeline{
+    width: 100%;
+    height:100%;
+    /* background-image: linear-gradient(75deg,red,orange); */
+    background-color: white;
+    animation:musicTimeLine 100s linear;
+    animation-play-state: paused;
+    position: relative;
+    /* top: 300px;
+    left: 100px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+
+}
+                
+#circle{
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: white;
+    position: absolute;
+    right: 0px;
+    display: none;
+}
+#box:hover #timeline{
+    background-color: rgb(17, 109, 8);
+}
+#box:hover #circle{
+    display: block;
+}
+@keyframes musicTimeLine {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+    
+}
+#language{
+    width: 7vw;
+    height: 5vh;
+    /* background-color: chartreuse; */
+    border: 1px solid rgb(117, 105, 105);
+    position: absolute;
+    bottom: 60px ;
+    border-radius: 20px 20px 20px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+#language:hover{
+    border: 1.3px solid white;
+    transform: scale(1.05);
+
+}
+h5{
+    color: white;
+}
+#globe{
+    width: 20px;
+}
+#album-cont{
+    position:absolute;
+    top: 0px;
+    right: 20px;
+    width: 75vw;
+    height: 100vh;
+    transition: all 1s;
+    background-image:linear-gradient(black,black);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-left: solid rgba(255, 255, 255, 0.139) 0.5px;
+    /* display: none; */
+}
+
+#album-cont:has(#kb-album:hover) {
+    background-image: linear-gradient(rgb(67, 5, 5),black);
+}
+#album-cont:has(#Or-album:hover) {
+    background-image: linear-gradient(rgb(173, 74, 13),black);
+}
+#album-cont:has(#Aw-album:hover) {
+    background-image: linear-gradient(rgba(7, 211, 247, 0.548),rgba(3, 61, 12, 0.747));
+}
+#album-cont:has(#A2-album:hover) {
+    background-image: linear-gradient(rgb(5, 88, 92),rgb(14, 14, 14));
+}
+.album{
+    width:17vw;
+    height: 55vh;
+    background-color:  rgba(0, 0, 0, 0.055);
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+}
+.posters{
+    width:15vw;
+    height: 40vh;
+
+}
+.inner-adiv{
+    width: 14vw;
+    height: 40vh;
+    margin-top: 20px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#album-indi{
+    color: aliceblue;
+    font-weight: bolder;
+    position: absolute;
+    font-size: 20px;
+    top: 100px;
+    left: 38px;
+}
+.album:hover{
+    background-color:  rgba(140, 134, 134, 0.29);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.p-logo{
+    width: 50px;
+    position: absolute;
+    bottom:  210px;
+    margin-left: 110px;
+    filter: opacity(0%);
+    transform: translateY(20px);
+    transition: all 0.5s;
+}
+.album:hover .p-logo{
+    filter: opacity(100%);
+    transform: translateY(0px); 
+} 
+/* .p-logo:hover{
+    filter: brightness(130%);
+    transform: scale(2);
+} */
+#m-n-cont{
+    width: 13vw;
+    height: 10vh;
+    /* background-color: aqua; */
+    position:absolute;
+    bottom: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.sd{
+    color: white;
+    font-weight: bold;
+}
+#year{
+    color: rgba(255, 255, 255, 0.361);
+    font-weight: normal;
+}
+#add-cont{
+    width: 50vw;
+    height: 10vh;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.inner-ad{
+    width: 6vw;
+    height: 6vh;
+    background-color: rgba(102, 99, 99, 0.429);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.ad-sub{
+    color: white;
+    font-size: 14px;
+    font-weight: lighter;
+}
+.inner-ad:hover .ad-sub{
+    color: black;
+}
+.inner-ad:hover{
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#songs-orange{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 75vw;
+    height: 73vh;
+    border-radius: 10px;
+    background-image: linear-gradient(rgba(67, 65, 64, 0.452),black);
+    display: none;
+
+}
+
+#songs-awara{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 75vw;
+    height: 73vh;
+    border-radius: 10px;
+    background-image: linear-gradient(rgba(157, 177, 158, 0.201),rgba(3, 61, 12, 0.747));
+    display: none;
+
+}
+#songs-ashique{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 75vw;
+    height: 73vh;
+    border-radius: 10px;
+    background-image: linear-gradient(rgb(1, 63, 66),rgb(14, 14, 14));
+    display: none;
+
+}
+.aqs-pic{
+    height: 350px;
+}
+#play-img{
+    width: 70px;
+    height: 80px;
+    position: absolute;
+    bottom: 25px;
+    left: 50px;
+    z-index: 2;
+    display: none;
+}

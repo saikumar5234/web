@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="playSong()">Play</button>
+    <button onclick="pauseSong()">Pause</button>
+    <button onclick="nextSong()">Next</button>
+    <button onclick="previousSong()">Previous</button>
+    <script>
+            var songs = ["../assist/audios/0.mp3", "../assist/audios/1.mp3", "../assist/audios/2.mp3"];
+            var audio = new Audio();
+            var currentSongIndex = 0;
+            var currentSongSource = songs[currentSongIndex];
+            audio.src = currentSongSource;
+            
+            function playSong() {
+            audio.play();
+            }
+            
+            function pauseSong() {
+            audio.pause();
+            }
+            
+            function nextSong() {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            currentSongSource = songs[currentSongIndex];
+            audio.src = currentSongSource;
+            audio.play();
+            }
+            
+            function previousSong() {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            currentSongSource = songs[currentSongIndex];
+            audio.src = currentSongSource;
+            audio.play();
+            }
+    </script>
+</body>
+</html>

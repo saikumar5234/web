@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+        *{
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Ubuntu', sans-serif;
+
+        }
+        body{
+            background-color: rgb(255, 250, 250);
+            height: 150vh;
+            display: flex;
+            justify-content: center;
+        }
+        nav{
+            width: 100vw;
+            height: 17vh;
+            position: sticky;
+            top: 0px;   
+           
+        }
+        #l-logo{
+            width: 60px;
+        }
+        #spy{
+            font-weight: bolder;
+            font-size:30px;
+            color: black;
+        }
+        #l-logo-div{
+            width: 13vw;
+            height: 10vh;
+            /* background-color: aqua; */
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: absolute;
+            top:20px;
+            left: 60px;
+        }
+        #l-body{
+            width: 40vw;
+            height: 125vh;
+            background-color:whitesmoke;
+            position: absolute;
+            top: 40px;
+            border-radius: 15px;
+            display: flex;
+            justify-content:space-evenly;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: 2px 2px 5px black,-2px -2px 5px black;
+        }
+        #l-banner{
+            font-weight: bolder;
+            font-size:20px;
+        }
+        .email{
+           width: 35vw; 
+           height: 8vh;
+           border: 1px solid whitesmoke;
+           border-radius: 4px;
+           outline: none;
+           display: flex;
+           font-size: 15px;
+           /* font-weight: bold; */
+           justify-content: center;
+           padding-left: 15px;
+        }
+        #l-emdiv{
+            width: 28vw;
+            height: 25vh;
+            /* background-color: aqua; */
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+        }
+        #login{
+            width: 14vw;
+            height: 8vh;
+            font-size: 17px;
+            font-weight: bold;
+            background-color: rgb(92, 215, 70);
+            border-radius: 100px;
+            border: none;
+        }
+        #e-m,#e-p{
+            position: relative;
+            top: 0px;
+            left:-190px;
+            font-size: 13px;
+        }
+        #e-m{
+            left:-200px;
+        }
+        #d-div,#d2-div{
+            width: 35vw;
+            height: 8vh;
+            display: flex;
+            align-items: center;
+            /* background-color: blue; */
+            justify-content: space-between;
+        }
+        #cbox-div{
+            width: 35vw;
+            height: 8vh;
+            font-size: 12px;
+        }
+        #tc-div{
+            font-size: 12px;
+            width: 35vw;
+            height: 8vh;
+        }
+        .d1-div{
+            font-size: 12px;
+        }
+        .Dob{
+            width: 11vw;
+            height: 6vh;
+        }
+        .gender{
+            width: 24vw;
+            height: 6vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        
+       
+    </style>
+</head>
+<body>
+   <nav>
+        <div id="l-logo-div"><img id="l-logo" src="../assist/logos/spotify.png" alt=""><span id="spy">Spotify</span></div>
+   </nav> 
+   <div id="l-body">
+        <span id="l-banner">Sign Up With Your Email Address</span> <br>
+     
+        <span id="e-m">Email ?</span>
+        <input class="email" id="emailInput" type="text" placeholder="Enter your email">
+        <span id="e-p">Password ?</span>
+        <input class="email"  id="passInput" type="text" placeholder="Create a password">
+        <span id="e-m">Name ?</span>
+        <input class="email"  id="nameInput" type="text" placeholder="Enter a profile name">
+        <span id="e-m">DOB ?</span>
+
+       <div id="d-div">
+        <select class="Dob" id="selectInp">
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+            
+        </select>
+        <input class="Dob" id="dateInp" type="text" placeholder="DD" >
+        <input class="Dob" id="yearInp" type="text" placeholder="YYYY" >
+       </div>
+       <span id="e-m">Gender</span>
+       <div id="d2-div">
+           <div class="gender">  <label>Male</label>  <input id="m" type="radio"  onclick="gen('male')" name="a"></div>
+           <div class="gender">  <label>Female</label><input id="f" type="radio"  onclick="gen('female')"  name="a" ></div>
+           <div class="gender">  <label>Others</label><input id="o" type="radio"  onclick="gen('others')" name="a" ></div>
+       </div>
+
+       <div id="cbox-div" class="d1-div">
+        <input type="checkbox" ><label> Share my registration data with Spotify's content providers for marketing purposes.</label>
+        </div>
+        <div id="tc-div">
+                <p> By clicking on sign-up, you agree to Spotify's Terms and Conditions of Use. <br><br>
+
+                    To learn more about how Spotify collects, uses, shares and protects your personal data, please see Spotify's Privacy Policy.</p>
+        </div>
+    
+      <form>  <input id="login" type="submit" value="sign up" onclick="add()">    </form>
+        <span>Already Have an account? </span><a href="./login to spotify.html">Log in.</a>
+   
+       
+        
+    </div>
+
+   
+<script>
+         
+          function add()
+          {
+           var emailInp=document.getElementById("emailInput").value
+            var passInp=document.getElementById("passInput").value
+            var nameInp=document.getElementById("nameInput").value
+            var selectInp=document.getElementById("selectInp").value
+            var dateInp=document.getElementById("dateInp").value
+            var yearInp=document.getElementById("yearInp").value
+            
+           localStorage.setItem("name",emailInp)
+            localStorage.setItem("password",passInp)
+            localStorage.setItem("suggested name",nameInp)
+            localStorage.setItem("month",selectInp)
+            localStorage.setItem("gender",gender)
+            localStorage.setItem("date",dateInp)
+            localStorage.setItem("year",yearInp)
+           
+          }
+          var gender;
+          function gen(x){
+           gender=x;
+          }
+</script>
+</body>
+</html>

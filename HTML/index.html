@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Spotify-Web music player</title>
+     <link rel="stylesheet" href="../CSS/style.css">
+     <link rel="icon" href="../assist/logos/spotify.png">
+     <script src="../JS/script.js" defer></script>
+</head>
+<body>
+       <!-- nav bar start -->
+   <nav>
+   <div id="s-cont">  
+      <img id="s-logo" src="../assist/logos/spotify.png" >
+     <h3>Spotify</h3>
+  </div>
+     <ul id="main-cont">
+        <div class="li-cont">
+         <img class="logos" src="../assist/logos/home1.png">  
+         <li class="s-li">Home</li>
+         </div>
+        <div class="li-cont">
+         <img class="logos" src="../assist/logos/search-26242.png"> 
+          <li class="s-li">Search</li>
+         </div>
+        <div class="li-cont">
+         <img class="logos" src="../assist/logos/play list.png">  
+         <li class="s-li">Your Library</li>
+         </div>
+     </ul> 
+     <br>
+     <ul id="main-cont">
+      <div class="li-cont">
+       <img class="logos" src="../assist/logos/plus.png">  
+       <li class="s-li">Create Playlist</li>
+       </div>
+      <div class="li-cont">
+       <img class="logos" id="liked-logo" src="../assist/logos/liked logo.jpg"> 
+        <li class="s-li">Liked Songs</li>
+       </div>
+       <div id="language">
+         <img src="../assist/logos/white-globe-icon-24.jpg" id="globe">
+            <h5>English</h5>
+       </div>
+      
+   </ul>
+   <button class="b-buttons" id="back-button" onclick="back()">   <img class="b-img" src="../assist/logos/left.png" alt=""></button>
+   <!-- <button class="b-buttons" id="forward-button" onclick="forward()"><img class="b-img" src="../assist/logos/right.png" alt=""></button> -->
+   </nav>
+             <!-- nav bar end -->
+
+             <!-- SONGS CONTAINER START -->
+
+   <div id="songs-cont">
+      <img id="kb-pic" src="../assist/images/kb.jpg" alt="">
+      <div id="kbsongs-cont">
+           <div id="song"  class="songs" onmousedown="playSong()">
+            <span >1</span>
+            <span id="Bekhayali">Bekhayali(Arijit Version)</span>
+            <span id="Bekhayali">Arijit Singh</span>
+            <!-- <img class="Equalizer" src="../assist/logos/Equalizer-by-Alexander-Stets-on-Dribbble.gif" alt=""> -->
+            <span >6:10</span>
+           </div>
+           <div id="song" class="songs" onmousedown="playSong()" >
+            <span>2</span>
+            <span id="Tujhe">Tujhe Kitna Chahne Lage</span>
+            <span>Arijit Singh</span>
+            <span>4:44</span>
+           </div>
+           <div id="song" class="songs" onmousedown="play2()">
+            <span>3</span>
+            <span id="Mere">Mere Sohneia</span>
+            <span>Parampara Tandon</span>
+            <span>3:13</span>
+           </div>
+           <div id="song" class="songs" onmousedown="play3()">
+            <span>4</span>
+            <span id="Pehla">Pehla Pyar</span>
+            <span>Arman Malik,Vishal Mishra</span>
+            <span>4:32</span>
+           </div>
+           <div id="song" class="songs" onmousedown="play4()">
+            <span>5</span>
+            <span id="Tera">Tera Ban</span>
+            <span>Akhil Sachdeva,Tulsi Kumar</span>
+            <span>3:56</span>
+           </div>
+      </div>
+   </div>
+                                <!-- SONGS CONTAINER END -->
+
+   <div id="play-cont">
+      <div  class="plg">
+        <button id="prevButton" onclick="previousSong()"> <img class="paly-logos"  src="../assist/logos/leftphotoshop.png"></button>
+         <button id="buttonVal" value="Play" onmousedown="pause1()">
+         <img id="p2" class="paly-logos"   src="../assist/logos/play.png" >
+         </button>
+         <button id="nextButton" onclick="nextSong()"><img class="paly-logos"  src="../assist/logos/Rightphotoshop.png"></button>
+      </div>
+      <div id="box">
+      <div id="timeline">
+         <div id="circle"></div>
+     </div>
+     </div>
+   </div>
+
+                    
+
+
+   <!-- Album start -->
+   <div id="album-cont" class="album-cont-c">
+      <div id="add-cont">
+         <div class="inner-ad"><span class="ad-sub">All</span></div>
+         <div class="inner-ad"><span class="ad-sub">Artists</span></div>
+         <div class="inner-ad"><span class="ad-sub">Songs</span></div>
+         <div class="inner-ad"><span class="ad-sub">Play-list</span></div>
+         <div class="inner-ad"><span class="ad-sub">Albums</span></div>
+         <div class="inner-ad"><span class="ad-sub">Pordcast</span></div>
+         <div class="inner-ad"><span class="ad-sub">Profiles</span></div>
+      </div>
+      <span id="album-indi">Albums</span>
+      <div id="kb-album" class="album" onclick="albumk()"  ><img class="p-logo"  src="../assist/logos/s-play button.png" ><div class="inner-adiv"><img class="posters" src="../assist/images/kb.jpg" alt=""> </div>
+          <div id="m-n-cont">
+
+               <span class="sd">Kabir singh</span>
+               <span class="sd" id="year">2019. varios artists</span>
+          </div>
+      </div>
+    <div id="Or-album" class="album" onclick="albumO()"  ><img class="p-logo"   src="../assist/logos/s-play button.png" ><div class="inner-adiv"><img class="posters" src="../assist/images/orange.jpg" alt=""></div>
+      <div id="m-n-cont">
+
+         <span class="sd">Orange</span>
+         <span class="sd" id="year">2010. Harries jayaraj</span>
+    </div>
+   </div>
+   <div id="Aw-album" class="album" onclick="albumA()"  ><img class="p-logo"   src="../assist/logos/s-play button.png" ><div class="inner-adiv"><img class="posters" src="../assist/images/awara.jpg" alt=""></div>
+   <div id="m-n-cont">
+
+      <span class="sd">Awara</span>
+      <span class="sd" id="year">2010. By Gowtham</span>
+</div>
+</div>
+   <div id="A2-album" class="album" onclick="albumA2()"  ><img class="p-logo"  src="../assist/logos/s-play button.png" ><div class="inner-adiv"><img class="posters" src="../assist/images/asq.jpg" alt=""></div>
+   <div id="m-n-cont">
+
+      <span class="sd">Ashique - 2</span>
+      <span class="sd" id="year">2013. Mitoon,Ankith thiwari</span>
+ </div>  
+   </div>
+
+   </div>
+               <!-- ALBUM END-->
+
+
+
+
+
+
+               <div id="songs-orange">
+                  <img id="kb-pic" src="../assist/images/orange.jpg" alt="">
+                  <div id="kbsongs-cont">
+                       <div id="song"  class="songs" onmousedown="play5()">
+                        <span >1</span>
+                        <span id="Bekhayali">Ola Olaala Ala</span>
+                        <span id="Bekhayali">Karunya,Ranina Reddy</span>
+                        <!-- <img class="Equalizer" src="../assist/logos/Equalizer-by-Alexander-Stets-on-Dribbble.gif" alt=""> -->
+                        <span >6:10</span>
+                       </div>
+                       <div id="song" class="songs" onmousedown="play6()">
+                        <span>2</span>
+                        <span id="Tujhe">Chilipiga Chusthavala</span>
+                        <span>karthik, Harris</span>
+                        <span>4:44</span>
+                       </div>
+                       <div id="song" class="songs" onmousedown="play7()">
+                        <span>3</span>
+                        <span id="Mere">Nenu Nuvvantu</span>
+                        <span>Naresh Iyear,Nadeesh</span>
+                        <span>3:13</span>
+                       </div>
+                       <div id="song" class="songs" onmousedown="play8()">
+                        <span>4</span>
+                        <span id="Pehla">Hello rammante</span>
+                        <span>Vijay Praksh,Devan Ekam</span>
+                        <span>4:32</span>
+                       </div>
+                       <div id="song" class="songs" onmousedown="play9()">
+                        <span>5</span>
+                        <span id="Tera">Rooba Rooba</span>
+                        <span>Shahil Hada , Chinmayi</span>
+                        <span>3:56</span>
+                       </div>
+                  </div>
+               </div>
+
+
+
+
+
+               <div id="songs-awara">
+                  <img id="kb-pic" src="../assist/images/awara.jpg" alt="">
+                  <div id="kbsongs-cont">
+                       <div id="song"  class="songs" onmousedown="play10()">
+                        <span >1</span>
+                        <span id="Bekhayali">chiru chiru chiru</span>
+                        <span id="Bekhayali">Yuvan Shankar Raja</span>
+                        <!-- <img class="Equalizer" src="../assist/logos/Equalizer-by-Alexander-Stets-on-Dribbble.gif" alt=""> -->
+                        <span >6:10</span>
+                       </div>
+                       <div id="song" class="songs" onmousedown="play11()">
+                        <span>2</span>
+                        <span id="Tujhe">Mandaara poovalle</span>
+                        <span>Yuvan,Benny Dayal</span>
+                        <span>4:44</span>
+                       </div>
+                       <div id="song" class="songs" onmousedown="play12()">
+                        <span>3</span>
+                        <span id="Mere">Arere vaana</span>
+                        <span>Rahul Numbiar,Yuvan Raja</span>
+                        <span>3:13</span>
+                       </div>
+                       <div id="song" class="songs" onmousedown="play13()">
+                        <span>4</span>
+                        <span id="Pehla">Chuttesai chuttesai</span>
+                        <span>Yuvan,karthik,Sunitha</span>
+                        <span>4:32</span>
+                       </div>
+                       <div id="song" class="songs" onmousedown="play14()">
+                        <span>5</span>
+                        <span id="Tera">Nee Yedhalo Naaku</span>
+                        <span>Sagar,Yuvan Shankar</span>
+                        <span>3:56</span>
+                       </div>
+                  </div>
+               </div>
+
+
+
+               <div id="songs-ashique">
+                  <img id="kb-pic" class="aqs-pic" src="../assist/images/asq.jpg" alt="">
+                  <div id="kbsongs-cont">
+                       <div id="song"  class="songs" onmousedown="play15()">
+                        <span >1</span>
+                        <span id="Bekhayali">Aasan Nahin Yahan</span>
+                        <span id="Bekhayali">Arijit Singh</span>
+                        <!-- <img class="Equalizer" src="../assist/logos/Equalizer-by-Alexander-Stets-on-Dribbble.gif" alt=""> -->
+                        <span >6:10</span>
+                       </div>
+                       <div id="song" class="songs" onmousedown="play16()">
+                        <span>2</span>
+                        <span id="Tujhe">Chahun Main Ya na</span>
+                        <span>Arijit Singh,palak</span>
+                        <span>4:44</span>
+                       </div>
+                       <div id="song" class="songs" onmousedown="play17()">
+                        <span>3</span>
+                        <span id="Mere">Hum Mar Jayenge</span>
+                        <span>Arijith,Thusli kumar</span>
+                        <span>3:13</span>
+                       </div>
+                       <div id="song" class="songs" onmousedown="play18()">
+                        <span>4</span>
+                        <span id="Pehla">Meri Aashiqui</span>
+                        <span>Arijith Singh,palak Muchal</span>
+                        <span>4:32</span>
+                       </div>
+                       <div id="song" class="songs" onmousedown="play19()">
+                        <span>5</span>
+                        <span id="Tera">Sun Raha Hain(male)</span>
+                        <span>Ankith Thiwari</span>
+                        <span>3:56</span>
+                       </div>
+                  </div>
+               </div>
+
+               
+               <img id="play-img" src="../assist/images/kb.jpg">
+
+
+
+              
+           
+</body>
+</html>
